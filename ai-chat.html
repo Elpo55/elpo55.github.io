@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NexusAI Chat</title>
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+    <link rel="stylesheet" href="ai-chat.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="app-container">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <a href="index.html" class="logo">
+                    <span class="logo-icon">◆</span>
+                    <h1>NexusAI</h1>
+                </a>
+                <button class="new-chat">
+                    <i class="fas fa-plus"></i>
+                    <span>Nouveau chat</span>
+                </button>
+            </div>
+            
+            <div class="conversations">
+                <!-- Les conversations seront listées ici -->
+            </div>
+
+            <div class="sidebar-footer">
+                <button class="clear-chats">
+                    <i class="fas fa-trash"></i>
+                    <span>Effacer les conversations</span>
+                </button>
+            </div>
+        </aside>
+
+        <main class="chat-area">
+            <div class="welcome-screen" id="welcomeScreen">
+                <h1>NexusAI Assistant</h1>
+                <div class="examples">
+                    <div class="examples-grid">
+                        <div class="example-group">
+                            <h2>Exemples</h2>
+                            <div class="example-box" data-prompt="Explique-moi la théorie de la relativité simplement">
+                                "Explique-moi la théorie de la relativité simplement" →
+                            </div>
+                            <div class="example-box" data-prompt="Écris-moi un poème sur le printemps">
+                                "Écris-moi un poème sur le printemps" →
+                            </div>
+                            <div class="example-box" data-prompt="Comment créer une API REST avec Node.js ?">
+                                "Comment créer une API REST avec Node.js ?" →
+                            </div>
+                        </div>
+                        <div class="example-group">
+                            <h2>Capacités</h2>
+                            <div class="example-box">Mémorise le contexte de la conversation</div>
+                            <div class="example-box">Génère du code et des explications détaillées</div>
+                            <div class="example-box">Aide à la rédaction et à la correction</div>
+                        </div>
+                        <div class="example-group">
+                            <h2>Limitations</h2>
+                            <div class="example-box">Peut parfois générer des informations incorrectes</div>
+                            <div class="example-box">Connaissances limitées aux données d'entraînement</div>
+                            <div class="example-box">Ne peut pas accéder à Internet en temps réel</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="chat-messages" id="chatMessages">
+                <!-- Les messages seront ajoutés ici -->
+            </div>
+
+            <div class="chat-input-area">
+                <form id="chatForm" class="chat-form">
+                    <div class="input-container">
+                        <textarea 
+                            id="userInput" 
+                            placeholder="Message à NexusAI..." 
+                            rows="1"
+                            maxlength="4096"
+                        ></textarea>
+                        <button type="submit" class="send-button">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </div>
+                    <div class="input-footer">
+                        NexusAI peut produire des informations inexactes. Vérifiez les faits importants.
+                    </div>
+                </form>
+            </div>
+        </main>
+    </div>
+    <script src="ai-chat.js" type="module"></script>
+</body>
+</html>
